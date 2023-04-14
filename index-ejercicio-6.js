@@ -38,11 +38,11 @@ function evaluaIntento(e){
   const usuarioNum = Number(e.target.elements.intento.value);
   if (usuarioNum === numeroSecreto) {
     muestraGanar();
-    reseteaVista();
+    // reseteaVista();
     return;
   } else if (intentos === 1){
     muestraPerder();
-    reseteaVista();
+    // reseteaVista();
     return;
   }
   intentos--;
@@ -75,12 +75,18 @@ function pistaMenor(val) {
 
 function muestraPerder() {
   pistaElem.textContent = `Perdiste 😝🤣 Suerte la próxima. `;
-  console.log('Perdiste');
+  recargarVista();
 }
 
 function muestraGanar() {
   pistaElem.textContent = `¡Ganaaastee! Carita feliz para tí: 😄`
-  console.log('Ganaste');
+  recargarVista();
+}
+
+function recargarVista(){
+  setTimeout(function(){
+    location.reload();
+  }, 3000);
 }
 
 function reseteaVista() {
