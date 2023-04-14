@@ -27,7 +27,7 @@ function recuperaIntentos(e){
 }
 
 function jugar(e){
-  console.log(numeroSecreto);
+  // console.log(numeroSecreto);
   intentosInputElem.classList.toggle('disabled');
   comenzarBtnElem.classList.toggle('disabled');
   intentoInputElem.removeAttribute("disabled");
