@@ -72,17 +72,17 @@ function pistaMenor(val) {
 }
 
 function muestraPerder(val) {
-  pistaElem.textContent = `Perdiste 😝🤣 la próxima será. (Era el ${val} 😜) `;
+  pistaElem.textContent = `Perdiste 😝🤣 era el ${val} 😜) `;
   recargarVista();
 }
 
 function muestraGanar() {
-  pistaElem.textContent = `¡Ganaaastee! Carita feliz para tí: 😄`
+  pistaElem.textContent = `¡Ganaaastee! Carita feliz para tí 😄`;
   recargarVista();
 }
 
 function recargarVista(){
   setTimeout(function(){
     location.reload();
-  }, 3000);
+  }, 4000);
 }
