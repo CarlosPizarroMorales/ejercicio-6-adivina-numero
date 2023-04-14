@@ -1,0 +1,5 @@
+#elemento {
+  transition-property: color;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+}
