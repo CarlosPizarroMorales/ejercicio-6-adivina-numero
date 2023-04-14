@@ -38,11 +38,9 @@ function evaluaIntento(e){
   const usuarioNum = Number(e.target.elements.intento.value);
   if (usuarioNum === numeroSecreto) {
     muestraGanar();
-    // reseteaVista();
     return;
   } else if (intentos === 1){
-    muestraPerder();
-    // reseteaVista();
+    muestraPerder(numeroSecreto);
     return;
   }
   intentos--;
@@ -54,7 +52,7 @@ function actualizaIntentos(val){
   intentosLabel.textContent = intentos;
   intentosInputElem.value = intentos;
   intentoInputElem.value = '';
-  intentoInputElem.setAttribute('placeholder', val);
+  // intentoInputElem.setAttribute('placeholder', val);
 }
 
 function muestraPista(val) {
@@ -73,8 +71,8 @@ function pistaMenor(val) {
   pistaElem.textContent = `Mi número es mayor que ${val}`;
 }
 
-function muestraPerder() {
-  pistaElem.textContent = `Perdiste 😝🤣 Suerte la próxima. `;
+function muestraPerder(val) {
+  pistaElem.textContent = `Perdiste 😝🤣 la próxima será. (Era el ${val} 😜) `;
   recargarVista();
 }
 
@@ -87,14 +85,4 @@ function recargarVista(){
   setTimeout(function(){
     location.reload();
   }, 3000);
-}
-
-function reseteaVista() {
-  comenzarBtnElem.classList.toggle('disabled');
-  intentosInputElem.value = 5;
-  intentosLabel.textContent = '5';
-  intentoInputElem.value = '';
-  intentoInputElem.setAttribute('placeholder', '');
-  intentoInputElem.setAttribute("disabled", 'true');
-  intentos = 5;
 }
